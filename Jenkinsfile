@@ -40,15 +40,15 @@ pipeline {
             steps {
                 sh ''' 
                     # Set correct NPM home directory
-                    export NPM_CONFIG_CACHE=$(pwd)/.npm-cache
-                    export HOME=$(pwd)
+                    # export NPM_CONFIG_CACHE=$(pwd)/.npm-cache
+                    # export HOME=$(pwd)
                     
                     ls -la
                     node --version
                     npm --version
 
                     # Ensure correct ownership
-                    sudo chown -R $(whoami):$(whoami) $HOME/.npm-cache || true
+                    # sudo chown -R $(whoami):$(whoami) $HOME/.npm-cache || true
 
                     # Clean install dependencies
                     npm ci 
