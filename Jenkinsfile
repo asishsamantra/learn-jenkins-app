@@ -27,7 +27,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:18-alpine'
-                    args '--user root'  // Run as root to avoid permission issues
+                    // args '--user root'  // Run as root to avoid permission issues
                     reuseNode true
                 }
             }
