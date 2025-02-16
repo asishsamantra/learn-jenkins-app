@@ -7,6 +7,7 @@ pipeline {
                 docker {
                     image 'node:18-alpine'
                     // args '--user jenkins'
+                    args "--user $(id -u jenkins):$(id -g jenkins)"
                     reuseNode true
                 }
             }
