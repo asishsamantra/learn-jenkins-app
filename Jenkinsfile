@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'nopde:18-alpine'
+                    image 'node:18-alpine'
                 }
             }
 
