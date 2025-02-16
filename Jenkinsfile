@@ -14,7 +14,7 @@ pipeline {
                     ls -la 
                     node --version 
                     npm --version
-                    npm ci
+                    whoami
                     ls -la
                 '''
             }
