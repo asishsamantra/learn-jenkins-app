@@ -16,6 +16,7 @@ pipeline {
                     ls -la 
                     node --version 
                     npm --version
+                    pwd
                     npm ci
                     ls -la
                 '''
