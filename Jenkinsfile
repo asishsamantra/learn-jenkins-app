@@ -6,6 +6,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:18-alpine'
+                    args '--user jenkins'
                     reuseNode true
                 }
             }
@@ -15,7 +16,7 @@ pipeline {
                     ls -la 
                     node --version 
                     npm --version
-                    pwd
+                    npm ci
                     ls -la
                 '''
             }
