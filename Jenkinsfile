@@ -16,9 +16,25 @@ pipeline {
                     ls -la 
                     node --version 
                     npm --version
-                    pwd
                     npm ci
+                    npm run build
                     ls -la
+                '''
+            }
+        }
+        stage('Test') {
+            agent {
+                docker {
+                    image 'node:18-alpine'
+                    // args '--user root'
+                    reuseNode true
+                }
+            }
+
+            steps {
+                sh ''' 
+                    test -f builld/index.html
+                    npm test
                 '''
             }
         }
